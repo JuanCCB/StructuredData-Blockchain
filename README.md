@@ -11,37 +11,34 @@ pip install -r requirements.txt [criptography 2.3.1]
 cd Blockchain-demo/
 
 ### Generating asymmetric cryptography to be used in transactions:
-from utils.encryption import *
-person_1 = generate_encryption_keys()
-person_2 = generate_encryption_keys()
+
+![image](https://user-images.githubusercontent.com/107895120/193429547-5f84959c-22a9-4c19-a376-002baff1fffa.png)
 
 generate_encryption_keys() return a dictionnary object with public_key and private_key as keys. Note that the dictionnary values are respectively RSAPublicKey and RSAPrivateKey objects from the cryptography module.
 
 ### Making a transaction : person_1 sends something to person_2:
 
-from transaction import Transaction
-tr_1 = Transaction(sender=person_1["public_key"], receiver=person_2["public_key"], assets="SOMETHING")
-tr_1.sign(person_1["private_key"])
+![image](https://user-images.githubusercontent.com/107895120/193429575-60aa5e05-bb45-4ba2-9fe9-ce4c06dbcb08.png)
 
 A transaction must be signed with sign() methods in order to be valid. The is_valid() method can be used to verify wether a transaction object is valid or not.
 
-tr_1.is_valid()
-True
+![image](https://user-images.githubusercontent.com/107895120/193429585-5ba077f4-494d-4b5f-bbad-0f0ad2653564.png)
+
 
 Now, we will create a block that holds the transaction.
 
-from block import Block
-bl_1 = Block(tr_1)
+![image](https://user-images.githubusercontent.com/107895120/193429606-56c87f31-7d18-49cd-8573-76ae576ba397.png)
+
+
 To be a valid block (also to be added to the blockchain), a proof of work is required. mine() method will find a solution to the hash puzzle according to a difficulty level.
 
-bl_1.mine()
-Creating a Blockchain and adding a block..
+![image](https://user-images.githubusercontent.com/107895120/193429625-ec58269c-a433-4a49-92f6-5132697c0689.png)
 
-from blockchain import Blockchain
-blc = Blockchain()
-blc.add_block(bl_1)
+Creating a Blockchain and adding a block.
+
+![image](https://user-images.githubusercontent.com/107895120/193429640-846aa873-9ae5-43ae-87b4-84cfa6e590e2.png)
+
 
 show_blocks() can be used to print all blocks in the blockchain.
 
-from blockchain import Blockchain
-blc.show_blocks()
+![image](https://user-images.githubusercontent.com/107895120/193429647-f168ea9b-c7a6-4643-a6fc-7c10610704ec.png)

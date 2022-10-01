@@ -10,14 +10,14 @@ pip install -r requirements.txt [criptography 2.3.1]
 ## Running
 cd Blockchain-demo/
 
-Generating asymmetric cryptography to be used in transactions:
+### Generating asymmetric cryptography to be used in transactions:
 from utils.encryption import *
 person_1 = generate_encryption_keys()
 person_2 = generate_encryption_keys()
 
 generate_encryption_keys() return a dictionnary object with public_key and private_key as keys. Note that the dictionnary values are respectively RSAPublicKey and RSAPrivateKey objects from the cryptography module.
 
-Making a transaction : person_1 sends something to person_2:
+### Making a transaction : person_1 sends something to person_2:
 
 from transaction import Transaction
 tr_1 = Transaction(sender=person_1["public_key"], receiver=person_2["public_key"], assets="SOMETHING")

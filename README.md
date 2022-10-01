@@ -3,11 +3,11 @@ A blockchain structure that allows to storage useful data with the purpose of ha
 Prerequisites
 python3 should be installed.
 
-#Installing needed python modules:
+## Installing needed python modules:
 
 pip install -r requirements.txt [criptography 2.3.1]
 
-#Running
+## Running
 cd Blockchain-demo/
 
 Generating asymmetric cryptography to be used in transactions:
